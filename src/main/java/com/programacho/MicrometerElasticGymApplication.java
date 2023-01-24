@@ -17,10 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class MicrometerElasticGymApplication {
 
     public static void main(String[] args) throws IOException {
-        MeterRegistry registry = new ElasticMeterRegistry(
-                ElasticConfig.DEFAULT,
-                Clock.SYSTEM
-        );
+        MeterRegistry registry = elasticMeterRegistry();
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
