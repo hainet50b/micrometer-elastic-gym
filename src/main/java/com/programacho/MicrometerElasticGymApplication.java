@@ -15,6 +15,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class MicrometerElasticGymApplication {
+
     public static void main(String[] args) throws IOException {
         MeterRegistry registry = elasticMeterRegistry();
 
@@ -68,6 +69,7 @@ public class MicrometerElasticGymApplication {
 
     private static ElasticMeterRegistry elasticMeterRegistry() {
         ElasticConfig config = k -> switch (k) {
+            // 以下はすべてデフォルト値
             case "elastic.host" -> "http://localhost:9200";
             case "elastic.index" -> "micrometer-metrics";
             case "elastic.userName" -> null;
